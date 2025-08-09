@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rona AlSayegh - Digital Marketing & Administration Professional</title>
+    <title>Cesar Al-Khatib - Full Stack Developer & Creative Professional</title>
     <style>
         * {
             margin: 0;
@@ -13,837 +12,529 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #ffffff;
+            color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .floating-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .shape {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 20s infinite linear;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); }
-            100% { transform: translateY(-100px) rotate(360deg); }
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1rem 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #fff, #f0f0f0);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            transform: translateY(-2px);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: white;
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        main {
-            margin-top: 80px;
-        }
-
-        .section {
-            min-height: 100vh;
-            padding: 4rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .container {
             max-width: 1200px;
-            width: 100%;
             margin: 0 auto;
+            padding: 20px;
         }
 
         .hero {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.4em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #555;
+        }
+
+        .contact-item a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #764ba2;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .section h2 {
+            font-size: 2.2em;
+            color: #333;
+            margin-bottom: 30px;
             text-align: center;
             position: relative;
         }
 
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #fff, #f0f0f0);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: slideInUp 1s ease-out;
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 10px auto;
+            border-radius: 2px;
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: slideInUp 1s ease-out 0.2s both;
+        .about-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid white;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            animation: slideInUp 1s ease-out 0.4s both;
-            margin: 0 1rem;
-        }
-
-        .cta-button:hover {
-            background: white;
-            color: #667eea;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .about-grid {
+        .skills-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
         }
 
-        .about-text h2 {
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            background: linear-gradient(45deg, #fff, #f0f0f0);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .skill-category {
+            background: linear-gradient(135deg, #f8f9ff, #e8f0ff);
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #e0e8ff;
         }
 
-        .about-text p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
         }
 
-        .skills {
+        .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2rem;
+            gap: 10px;
         }
 
         .skill-tag {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
             border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
+            font-size: 0.9em;
+            font-weight: 500;
         }
 
-        .skill-tag:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
         }
 
-        .about-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #f0f0f0;
         }
 
-        .profile-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .profile-card:hover {
+        .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #fff, #f0f0f0);
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
+        .project-card h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .project-card .role {
             color: #667eea;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .project-card .period {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .project-card .description {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .tech-used {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            background: #f0f7ff;
+            color: #667eea;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            border: 1px solid #e0e8ff;
         }
 
         .experience-timeline {
             position: relative;
-            margin-top: 3rem;
+            padding-left: 30px;
         }
 
-        .timeline-item {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(20px);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-            position: relative;
-            margin-left: 2rem;
-        }
-
-        .timeline-item::before {
+        .experience-timeline::before {
             content: '';
             position: absolute;
-            left: -2rem;
-            top: 50%;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 40px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 20px;
             width: 15px;
             height: 15px;
-            background: white;
+            background: #667eea;
             border-radius: 50%;
-            transform: translateY(-50%);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #667eea;
         }
 
-        .timeline-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        .experience-item h3 {
+            color: #333;
+            margin-bottom: 5px;
         }
 
-        .timeline-item h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: white;
-        }
-
-        .timeline-item .duration {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-form {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 3rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 2rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: white;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: none;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            font-size: 1rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            background: rgba(255, 255, 255, 0.3);
-            border-color: white;
-            transform: translateY(-2px);
-        }
-
-        .submit-btn {
-            background: white;
+        .experience-item .company {
             color: #667eea;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 50px;
             font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .contact-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(20px);
-            border-radius: 15px;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        }
-
-        .contact-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .section-title {
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: linear-gradient(45deg, #fff, #f0f0f0);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .section {
-                padding: 2rem 1rem;
-            }
-            
-            .timeline-item {
-                margin-left: 1rem;
-            }
-            
-            .timeline-item::before {
-                left: -1rem;
-            }
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            40% {
-                transform: translateX(-50%) translateY(-10px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-5px);
-            }
+            margin-bottom: 10px;
         }
 
         .education-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 25px;
+            margin-top: 30px;
         }
 
         .education-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(20px);
-            border-radius: 15px;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #f8f9ff, #e8f0ff);
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #e0e8ff;
+        }
+
+        .education-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .education-card .school {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .education-card .period {
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .cta-section {
             text-align: center;
-        }
-
-        .education-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .education-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .research-tag {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 1rem;
+            padding: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
             border-radius: 15px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
         }
 
-        .research-tag:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-5px);
+        .cta-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+            
+            .contact-info {
+                gap: 15px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="bg-animation">
-        <div class="floating-shapes" id="floating-shapes"></div>
-    </div>
-
-    <header>
-        <nav>
-            <div class="logo">Rona AlSayegh</div>
-            <ul class="nav-links">
-                <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
-                <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
-                <li><a href="#experience" onclick="scrollToSection('experience')">Experience</a></li>
-                <li><a href="#education" onclick="scrollToSection('education')">Education</a></li>
-                <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
+    <div class="container">
         <!-- Hero Section -->
-        <section id="home" class="section">
-            <div class="container">
-                <div class="hero">
-                    <h1>Rona AlSayegh</h1>
-                    <p>Digital Marketing Specialist & Administrative Professional</p>
-                    <p style="font-size: 1rem; opacity: 0.8; margin-bottom: 2rem;">Leveraging expertise in graphic design, digital marketing, and educational management</p>
-                    <a href="#contact" class="cta-button" onclick="scrollToSection('contact')">Get In Touch</a>
-                    <a href="#about" class="cta-button" onclick="scrollToSection('about')">Learn More</a>
-                    <div class="scroll-indicator">
-                        <div style="font-size: 2rem;">↓</div>
-                    </div>
+        <section class="hero">
+            <h1>Cesar Hamza Al-Khatib</h1>
+            <p class="subtitle">Full Stack Developer & Creative Professional</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:ceasar.elkhatib@gmail.com">ceasar.elkhatib@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <a href="tel:+96170864221">+961 70 864 221</a>
+                </div>
+                <div class="contact-item">
+                    <span>💻</span>
+                    <a href="https://github.com/cesaralk" target="_blank">GitHub</a>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Lebanon</span>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-                <div class="about-grid">
-                    <div class="about-text">
-                        <h2>About Me</h2>
-                        <p>I am a dedicated professional seeking a dynamic role in administration or digital marketing where I can leverage my diverse expertise in graphic design, digital marketing tools, data entry, and educational management.</p>
-                        <p>My goal is to drive organizational success by implementing creative marketing strategies, streamlining administrative processes, and delivering high-quality work through meticulous attention to detail and effective communication.</p>
-                        
-                        <div class="skills">
-                            <div class="skill-tag">Photoshop</div>
-                            <div class="skill-tag">CorelDraw</div>
-                            <div class="skill-tag">Canva</div>
-                            <div class="skill-tag">Later App</div>
-                            <div class="skill-tag">Mailchimp</div>
-                            <div class="skill-tag">Stripo</div>
-                            <div class="skill-tag">Video Editing</div>
-                            <div class="skill-tag">Social Media</div>
-                            <div class="skill-tag">Microsoft Office</div>
-                            <div class="skill-tag">Sidra Accounting</div>
-                            <div class="skill-tag">English & Arabic</div>
-                        </div>
+        <section class="section">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>I'm an enthusiastic Computer Science graduate with a unique blend of technical expertise and creative vision. My journey spans web development, graphic design, and digital media management, giving me a comprehensive understanding of how technology and creativity intersect to create meaningful user experiences.</p>
+                
+                <p>With hands-on experience in full-stack development and a strong foundation in design principles, I bring both analytical problem-solving skills and creative flair to every project. My diverse background in journalism, management, and technical roles has taught me to communicate effectively, lead teams, and deliver results under pressure.</p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section">
+            <h2>Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>💻 Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">C#</span>
                     </div>
-                    <div class="about-visual">
-                        <div class="profile-card">
-                            <div class="profile-image">RA</div>
-                            <h3>Rona AlSayegh</h3>
-                            <p>Based in Aley, Lebanon</p>
-                            <p style="font-size: 0.9rem; opacity: 0.8;">7+ years in graphic design<br>3+ years in digital marketing</p>
-                        </div>
+                </div>
+                <div class="skill-category">
+                    <h3>🛠️ Frameworks & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">WordPress</span>
+                        <span class="skill-tag">Unity</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Microsoft Office</span>
+                        <span class="skill-tag">AutoCAD</span>
+                        <span class="skill-tag">3ds Max</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>🎨 Creative Suite</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Adobe Photoshop</span>
+                        <span class="skill-tag">Adobe Illustrator</span>
+                        <span class="skill-tag">Graphic Design</span>
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Social Media Design</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>🌐 Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Arabic (Native)</span>
+                        <span class="skill-tag">English (Fluent)</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <div class="container">
-                <h2 class="section-title">Experience</h2>
-                <div class="experience-timeline">
-                    <div class="timeline-item">
-                        <h3>Secretary & Graphic Designer</h3>
-                        <div class="duration">World of Signs Company • 7 years</div>
-                        <p>Led graphic design projects and administrative operations, combining creative design skills with organizational management to support company growth and client satisfaction.</p>
+        <!-- Featured Projects -->
+        <section class="section">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Mada Theater Academy Website</h3>
+                    <div class="role">Web & Graphic Designer</div>
+                    <div class="period">2022 - 2023</div>
+                    <div class="description">
+                        Designed and developed a complete digital presence for a performing arts academy. Created responsive website architecture, managed content strategy, and developed a cohesive visual brand across all digital platforms.
                     </div>
-                    
-                    <div class="timeline-item">
-                        <h3>Digital Marketing Specialist</h3>
-                        <div class="duration">Self-Directed Learning • 3 years</div>
-                        <p>Developed expertise in digital marketing strategies, email marketing campaigns, and social media management through continuous professional development.</p>
+                    <div class="tech-used">
+                        <span class="tech-tag">WordPress</span>
+                        <span class="tech-tag">Adobe Photoshop</span>
+                        <span class="tech-tag">Adobe Illustrator</span>
+                        <span class="tech-tag">Social Media Design</span>
+                        <span class="tech-tag">Content Management</span>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <h3>Educational Assistant</h3>
-                        <div class="duration">Ishraq School & Ramlieh Official School • 2 years</div>
-                        <p>Supported educational activities for grades KG1-6, developing strong communication skills and attention to detail in educational environments.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Merhi Trading Digital Platform</h3>
+                    <div class="role">Social Media & Data Management</div>
+                    <div class="period">2021 - 2022</div>
+                    <div class="description">
+                        Developed and implemented a comprehensive digital strategy for a trading company. Created automated data entry systems, managed social media campaigns, and optimized content scheduling workflows.
                     </div>
-                    
-                    <div class="timeline-item">
-                        <h3>Private Teacher</h3>
-                        <div class="duration">Independent • 2 years</div>
-                        <p>Provided personalized educational support, demonstrating strong communication skills and adaptability in one-on-one learning environments.</p>
+                    <div class="tech-used">
+                        <span class="tech-tag">Data Management</span>
+                        <span class="tech-tag">Social Media Marketing</span>
+                        <span class="tech-tag">Content Strategy</span>
+                        <span class="tech-tag">Process Automation</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Al Diyar Newspaper Digital Edition</h3>
+                    <div class="role">News Editor & Digital Content Manager</div>
+                    <div class="period">2014 - 2021</div>
+                    <div class="description">
+                        Led digital transformation initiatives for a major newspaper. Managed editorial workflows, coordinated multimedia content production, and optimized content delivery for both print and digital platforms.
+                    </div>
+                    <div class="tech-used">
+                        <span class="tech-tag">Content Management</span>
+                        <span class="tech-tag">Editorial Systems</span>
+                        <span class="tech-tag">Multimedia Production</span>
+                        <span class="tech-tag">Digital Publishing</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Education Section -->
-        <section id="education" class="section">
-            <div class="container">
-                <h2 class="section-title">Education & Research</h2>
-                <div class="education-grid">
-                    <div class="education-card">
-                        <div class="education-icon">🎓</div>
-                        <h3>Bachelor's Degree</h3>
-                        <p><strong>Educational Management</strong></p>
-                        <p>Modern University for Business and Science (MUBS)</p>
-                    </div>
-                    
-                    <div class="education-card">
-                        <div class="education-icon">📚</div>
-                        <h3>Baccalaureate</h3>
-                        <p><strong>Education</strong></p>
-                        <p>Byblos Institution, Aley</p>
-                    </div>
+        <!-- Professional Experience -->
+        <section class="section">
+            <h2>Professional Journey</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <h3>Web & Graphic Designer</h3>
+                    <div class="company">Mada Theater Academy (2022 - 2023)</div>
+                    <p>Led comprehensive digital design initiatives, creating compelling web experiences and visual content that enhanced the academy's online presence and student engagement.</p>
                 </div>
-
-                <div style="margin-top: 4rem;">
-                    <h3 style="text-align: center; margin-bottom: 2rem; font-size: 2rem;">Research Projects</h3>
-                    <div class="research-grid">
-                        <div class="research-tag">Leadership Studies</div>
-                        <div class="research-tag">Management Analysis</div>
-                        <div class="research-tag">SWOT Analysis</div>
-                        <div class="research-tag">Motivation & Performance</div>
-                        <div class="research-tag">Nutrition Research</div>
-                        <div class="research-tag">Educational Psychology</div>
-                    </div>
+                
+                <div class="experience-item">
+                    <h3>Social Media & Data Entry Assistant</h3>
+                    <div class="company">Merhi Trading (2021 - 2022)</div>
+                    <p>Streamlined business operations through efficient data management systems and strategic social media marketing, improving both internal workflows and external brand visibility.</p>
                 </div>
-
-                <div style="margin-top: 3rem; text-align: center;">
-                    <h4 style="margin-bottom: 1rem; font-size: 1.3rem;">Related Coursework</h4>
-                    <p style="opacity: 0.9; max-width: 800px; margin: 0 auto;">
-                        Leadership • Management • Psychology • Public Speaking • Research Methods • Computer Fundamentals • 
-                        Environmental Education • Counseling • Classroom Management • Special Education • Fine Arts • 
-                        Math Curriculum • Sustainable Development
-                    </p>
+                
+                <div class="experience-item">
+                    <h3>Branch Manager</h3>
+                    <div class="company">Obeid Center (2014 - 2021)</div>
+                    <p>Successfully managed multi-faceted retail operations, demonstrating leadership in team management, strategic planning, and customer relationship building while consistently exceeding sales targets.</p>
+                </div>
+                
+                <div class="experience-item">
+                    <h3>News Editor</h3>
+                    <div class="company">Al Diyar Newspaper</div>
+                    <p>Coordinated editorial content across print and digital platforms, working with diverse teams to deliver timely, accurate news coverage while maintaining high editorial standards.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 class="section-title">Let's Connect</h2>
-                
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-icon">📧</div>
-                        <h3>Email</h3>
-                        <p>ronasayegh17@gmail.com</p>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-icon">📞</div>
-                        <h3>Phone</h3>
-                        <p>71-186043</p>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-icon">📍</div>
-                        <h3>Location</h3>
-                        <p>Aley, Lebanon</p>
-                    </div>
+        <!-- Education -->
+        <section class="section">
+            <h2>Education</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>BSc in Computer Science</h3>
+                    <div class="school">Modern University for Business and Science, Aley</div>
+                    <div class="period">2020 - 2024</div>
                 </div>
-
-                <div class="contact-form">
-                    <h3 style="text-align: center; margin-bottom: 2rem; font-size: 1.5rem;">Send a Message</h3>
-                    <form onsubmit="handleSubmit(event)">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
+                
+                <div class="education-card">
+                    <h3>Diploma in Journalism</h3>
+                    <div class="school">Lebanese University, UNESCO, Beirut</div>
+                    <div class="period">2011 - 2014</div>
+                </div>
+                
+                <div class="education-card">
+                    <h3>Secondary Education</h3>
+                    <div class="school">Maron Aboud High School</div>
+                    <div class="period">2009 - 2011</div>
                 </div>
             </div>
         </section>
-    </main>
 
-    <script>
-        // Create floating background shapes
-        function createFloatingShapes() {
-            const shapesContainer = document.getElementById('floating-shapes');
-            
-            for (let i = 0; i < 15; i++) {
-                const shape = document.createElement('div');
-                shape.className = 'shape';
-                
-                // Random size and position
-                const size = Math.random() * 60 + 20;
-                shape.style.width = size + 'px';
-                shape.style.height = size + 'px';
-                shape.style.left = Math.random() * 100 + '%';
-                shape.style.animationDelay = Math.random() * 20 + 's';
-                shape.style.animationDuration = (Math.random() * 20 + 15) + 's';
-                
-                shapesContainer.appendChild(shape);
-            }
-        }
-
-        // Smooth scroll to sections
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            const headerHeight = 80;
-            const targetPosition = section.offsetTop - headerHeight;
-            
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-
-        // Handle form submission
-        function handleSubmit(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(event.target);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject');
-            const message = formData.get('message');
-            
-            // Create mailto link
-            const mailtoLink = `mailto:ronasayegh17@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-            
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Show success message
-            alert('Email client opened! Your message is ready to send.');
-            
-            // Reset form
-            event.target.reset();
-        }
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.15)';
-                header.style.backdropFilter = 'blur(15px)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.1)';
-                header.style.backdropFilter = 'blur(10px)';
-            }
-        });
-
-        // Active nav link highlighting
-        window.addEventListener('scroll', () => {
-            const sections = ['home', 'about', 'experience', 'education', 'contact'];
-            const scrollPos = window.scrollY + 200;
-            
-            sections.forEach(sectionId => {
-                const section = document.getElementById(sectionId);
-                const navLink = document.querySelector(`a[href="#${sectionId}"]`);
-                
-                if (section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
-                    document.querySelectorAll('.nav-links a').forEach(link => {
-                        link.style.color = 'rgba(255, 255, 255, 0.8)';
-                    });
-                    if (navLink) {
-                        navLink.style.color = 'white';
-                    }
-                }
-            });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Initialize animations and effects when page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            createFloatingShapes();
-            
-            // Observe elements for scroll animations
-            document.querySelectorAll('.timeline-item, .education-card, .contact-card').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'all 0.6s ease';
-                observer.observe(el);
-            });
-        });
-
-        // Add some interactive hover effects
-        document.addEventListener('mousemove', (e) => {
-            const shapes = document.querySelectorAll('.shape');
-            const mouseX = e.clientX / window.innerWidth;
-            const mouseY = e.clientY / window.innerHeight;
-            
-            shapes.forEach((shape, index) => {
-                const speed = (index + 1) * 0.5;
-                const x = mouseX * speed;
-                const y = mouseY * speed;
-                
-                shape.style.transform += ` translate(${x}px, ${y}px)`;
-            });
-        });
-    </script>
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <h2>Let's Build Something Amazing Together</h2>
+            <p>Ready to bring your next project to life? I'm passionate about creating innovative solutions that make a real impact.</p>
+            <a href="mailto:ceasar.elkhatib@gmail.com" class="cta-button">Get In Touch</a>
+        </section>
+    </div>
 </body>
 </html>
