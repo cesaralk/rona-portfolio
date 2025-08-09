@@ -529,7 +529,187 @@
             animation-delay: 4s;
         }
 
-        /* Contact method icons styling */
+        /* Projects Section */
+        .projects {
+            background: var(--bg-light);
+        }
+
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-white);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .projects-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-item {
+            background: var(--bg-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .project-thumbnail {
+            height: 250px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-thumbnail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .project-item:hover .project-thumbnail::before {
+            left: 100%;
+        }
+
+        .project-info {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .project-client {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .project-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .project-link:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .project-type-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .client-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .project-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--bg-light);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* Responsive adjustments */
         .contact-method:hover .contact-icon {
             transform: scale(1.1) rotate(5deg);
         }
@@ -600,6 +780,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -668,6 +849,275 @@
                     <div class="skill-icon">🎬</div>
                     <h3>Content Creation</h3>
                     <p>Video editing, blogging, and content creation across multiple platforms with a focus on engaging storytelling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title fade-in">Featured Projects</h2>
+            
+            <div class="project-filters fade-in">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="content">Articles & Content</button>
+                <button class="filter-btn" data-filter="social">Social Media</button>
+                <button class="filter-btn" data-filter="design">Design Work</button>
+            </div>
+
+            <div class="projects-showcase fade-in">
+                <!-- Dr. Nikki Cohen Website Articles -->
+                <div class="project-item" data-category="content">
+                    <div class="project-thumbnail">
+                        <div class="project-type-badge">Content</div>
+                        📝
+                    </div>
+                    <div class="project-info">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <div class="client-logo">NK</div>
+                            <div>
+                                <div class="project-title">Website Articles & Content</div>
+                                <div class="project-client">Dr. Nikki Cohen</div>
+                            </div>
+                        </div>
+                        <p class="project-description">Created engaging articles and managed data entry for Dr. Nikki Cohen's medical website. Developed educational content, patient resources, and informative blog posts to enhance the website's value and SEO.</p>
+                        <div class="project-links">
+                            <a href="https://www.drnikkicohen.com/" target="_blank" class="project-link">
+                                📄 View Articles
+                            </a>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <div class="stat-number">Medical</div>
+                                <div class="stat-label">Industry</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">Content Writing</div>
+                                <div class="stat-label">Service</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">2024</div>
+                                <div class="stat-label">Year</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr. Nikki Cohen Instagram Post 1 -->
+                <div class="project-item" data-category="social">
+                    <div class="project-thumbnail">
+                        <div class="project-type-badge">Instagram</div>
+                        📸
+                    </div>
+                    <div class="project-info">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <div class="client-logo">NK</div>
+                            <div>
+                                <div class="project-title">Instagram Post Design</div>
+                                <div class="project-client">Dr. Nikki Cohen</div>
+                            </div>
+                        </div>
+                        <p class="project-description">Created engaging Instagram post content with professional medical branding, optimized for social media engagement and patient education.</p>
+                        <div class="project-links">
+                            <a href="https://www.instagram.com/p/CkrrJ0_N4hi/?igsh=NDVmZGs1cWNybnZn" target="_blank" class="project-link">
+                                📱 View Post
+                            </a>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <div class="stat-number">Social</div>
+                                <div class="stat-label">Platform</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">Design</div>
+                                <div class="stat-label">Type</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">Medical</div>
+                                <div class="stat-label">Niche</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr. Nikki Cohen Instagram Post 2 -->
+                <div class="project-item" data-category="social">
+                    <div class="project-thumbnail">
+                        <div class="project-type-badge">Instagram</div>
+                        🎨
+                    </div>
+                    <div class="project-info">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <div class="client-logo">NK</div>
+                            <div>
+                                <div class="project-title">Educational Instagram Content</div>
+                                <div class="project-client">Dr. Nikki Cohen</div>
+                            </div>
+                        </div>
+                        <p class="project-description">Developed educational social media content combining medical expertise with engaging visual design to inform and attract patients.</p>
+                        <div class="project-links">
+                            <a href="https://www.instagram.com/p/CkesVVnN9Iy/?igsh=bDIyNDVpZzlua3No" target="_blank" class="project-link">
+                                📱 View Post
+                            </a>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <div class="stat-number">Educational</div>
+                                <div class="stat-label">Content</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">Instagram</div>
+                                <div class="stat-label">Platform</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">Visual</div>
+                                <div class="stat-label">Medium</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr. Nikki Cohen Instagram Reel -->
+                <div class="project-item" data-category="social">
+                    <div class="project-thumbnail">
+                        <div class="project-type-badge">Reel</div>
+                        🎬
+                    </div>
+                    <div class="project-info">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <div class="client-logo">NK</div>
+                            <div>
+                                <div class="project-title">Instagram Reel Creation</div>
+                                <div class="project-client">Dr. Nikki Cohen</div>
+                            </div>
+                        </div>
+                        <p class="project-description">Created and edited engaging video content for Instagram Reels, combining video editing skills with strategic content planning for maximum reach and patient engagement.</p>
+                        <div class="project-links">
+                            <a href="https://www.instagram.com/reel/CiSchHVD0Rj/?igsh=ZmFtcWlwZHY0bzd1" target="_blank" class="project-link">
+                                🎥 View Reel
+                            </a>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <div class="stat-number">Video</div>
+                                <div class="stat-label">Format</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">Editing</div>
+                                <div class="stat-label">Skill</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">Engagement</div>
+                                <div class="stat-label">Goal</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr. Joseph Cohen Website Articles -->
+                <div class="project-item" data-category="content">
+                    <div class="project-thumbnail">
+                        <div class="project-type-badge">Content</div>
+                        📊
+                    </div>
+                    <div class="project-info">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <div class="client-logo">JC</div>
+                            <div>
+                                <div class="project-title">Website Content & Data Management</div>
+                                <div class="project-client">Dr. Joseph Cohen</div>
+                            </div>
+                        </div>
+                        <p class="project-description">Managed content creation and data entry for Cohen Optometry website. Wrote informative articles about eye care, updated patient resources, and maintained website databases with accurate information.</p>
+                        <div class="project-links">
+                            <a href="https://cohenoptometry.com/" target="_blank" class="project-link">
+                                📄 View Content
+                            </a>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <div class="stat-number">Optometry</div>
+                                <div class="stat-label">Industry</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">Content + Data</div>
+                                <div class="stat-label">Services</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">2024</div>
+                                <div class="stat-label">Year</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr. Joseph Cohen Facebook Post -->
+                <div class="project-item" data-category="social">
+                    <div class="project-thumbnail">
+                        <div class="project-type-badge">Facebook</div>
+                        📘
+                    </div>
+                    <div class="project-info">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <div class="client-logo">JC</div>
+                            <div>
+                                <div class="project-title">Facebook Marketing Campaign</div>
+                                <div class="project-client">Dr. Joseph Cohen</div>
+                            </div>
+                        </div>
+                        <p class="project-description">Created strategic Facebook content to promote optometry services, featuring professional design and targeted messaging for patient acquisition.</p>
+                        <div class="project-links">
+                            <a href="https://www.facebook.com/share/p/1Aunin9VzY/" target="_blank" class="project-link">
+                                📘 View Post
+                            </a>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <div class="stat-number">Facebook</div>
+                                <div class="stat-label">Platform</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">Marketing</div>
+                                <div class="stat-label">Purpose</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">Medical</div>
+                                <div class="stat-label">Sector</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Showcase Summary -->
+                <div class="project-item" data-category="all" style="grid-column: 1 / -1;">
+                    <div class="project-thumbnail" style="height: 200px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <div class="project-type-badge">Portfolio</div>
+                        ⭐
+                    </div>
+                    <div class="project-info">
+                        <div class="project-title">Complete Digital Marketing Portfolio</div>
+                        <div class="project-client">Healthcare Industry Specialist</div>
+                        <p class="project-description">Comprehensive digital marketing and design services for medical professionals, including website development, social media management, content creation, and brand development across multiple platforms and mediums.</p>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <div class="stat-number">2+</div>
+                                <div class="stat-label">Clients</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">5+</div>
+                                <div class="stat-label">Projects</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">3</div>
+                                <div class="stat-label">Platforms</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Success</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -904,6 +1354,30 @@
                 submitBtn.style.background = '';
                 this.reset();
             }, 3000);
+        });
+
+        // Project filtering functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filterValue = btn.getAttribute('data-filter');
+                
+                projectItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue || item.getAttribute('data-category') === 'all') {
+                        item.style.display = 'block';
+                        item.style.animation = 'fadeInUp 0.5s ease';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
         });
 
         // Add interactive effects
